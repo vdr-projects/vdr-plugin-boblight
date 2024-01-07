@@ -28,10 +28,10 @@
 #include "main_menu.h"
 
 //***************************************************************************
-// 
+//
 //***************************************************************************
 
-static const char *VERSION        = GITVERSION;
+static const char *VERSION        = "0.0.8";
 static const char *DESCRIPTION    = "Boblight with data from softhddevice";
 static const char *MAINMENUENTRY  = "Boblight";
 
@@ -40,10 +40,10 @@ static const char *MAINMENUENTRY  = "Boblight";
 // Plugin
 //***************************************************************************
 
-class cPluginBoblight : public cPlugin 
+class cPluginBoblight : public cPlugin
 {
    public:
-      
+
       cPluginBoblight(void);
       virtual ~cPluginBoblight();
       virtual const char* Version(void)          { return VERSION; }

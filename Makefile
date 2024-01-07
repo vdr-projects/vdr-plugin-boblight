@@ -11,8 +11,7 @@ PLUGIN = vdrboblight
 
 ### The version number of this plugin (taken from the main source file):
 
-#VERSION = $(shell grep 'static const char \*VERSION *=' vdrboblight.h | awk '{ print $$6 }' | sed -e 's/[";]//g')
-VERSION := $(shell git describe --tags master)
+VERSION = $(shell grep 'static const char \*VERSION *=' $(PLUGIN).h | awk '{ print $$6 }' | sed -e 's/[";]//g')
 
 LIBS += -lboblight
 
@@ -81,8 +80,6 @@ INCLUDES += -I$(VDRSRC)/include
 endif
 
 DEFINES += -DPLUGIN_NAME_I18N='"$(PLUGIN)"'
-### Define GITVERSION used in vdrboblight.c
-DEFINES += -DGITVERSION='"$(VERSION)"'
 
 ### The object files (add further files here):
 
@@ -130,5 +127,5 @@ dist: clean
 	@echo Distribution package created as $(PACKAGE).tgz
 
 clean:
-	@-rm -f $(OBJS) $(DEPFILE) *.so *.tgz core* *~ $(PODIR)/*.mo $(PODIR)/*.pot 
+	@-rm -f $(OBJS) $(DEPFILE) *.so *.tgz core* *~ $(PODIR)/*.mo $(PODIR)/*.pot
 	@-rm -f libvdr-$(PLUGIN).so libvdr-$(PLUGIN).so.$(APIVERSION)
