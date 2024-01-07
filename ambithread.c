@@ -45,8 +45,10 @@ cAmbiThread::cAmbiThread()
    osd3dChanged = true;
 
    softHdPlugin = cPluginManager::GetPlugin("softhddevice");
-   int softHdGrabService = (softHdPlugin && softHdPlugin->Service(ATMO1_GRAB_SERVICE, 0));
+   if (!softHdPlugin)
+        softHdPlugin = cPluginManager::GetPlugin("softhdcuvid");
 
+   int softHdGrabService = (softHdPlugin && softHdPlugin->Service(ATMO1_GRAB_SERVICE, 0));
    if (!softHdGrabService)
       error("Can't find softhddevice %s!", softHdPlugin ? "service" : "plugin");
    
