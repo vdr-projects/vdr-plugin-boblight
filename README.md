@@ -5,7 +5,7 @@ This is a "plugin" for the Video Disk Recorder (VDR).
 
 Boblight with data from softhddevice
 
-Needs libboblight.so and boblightd configured and running (https://code.google.com/p/boblight)
+Needs libboblight.so and boblightd configured and running (https://github.com/vdr-projects/boblight/)
 
 | Setup option         | Default | Description |
 |----------------------|---------|-------------|
